@@ -718,6 +718,7 @@ const (
 	// See: http://api.zeromq.org/4-1:zmq-getsockopt#toc8
 	POLLIN  = State(C.ZMQ_POLLIN)
 	POLLOUT = State(C.ZMQ_POLLOUT)
+	NONE    = State(0)
 )
 
 /*
