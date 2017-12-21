@@ -110,6 +110,9 @@ var (
 		[2]int{2, 0}: 7,
 		[2]int{2, 1}: 8,
 		[2]int{2, 2}: 8,
+
+		[2]int{1, 3}: 4,
+		[2]int{1, 4}: 4,
 	}
 )
 
@@ -120,7 +123,7 @@ func init() {
 		return
 	}
 
-	v, ok1 := api[[2]int{major, minor}]
+	v, ok1 := api[[2]int{minor, patch}]
 	w, ok2 := api[[2]int{int(C.zmq4_minor), int(C.zmq4_patch)}]
 	if v != w || !ok1 || !ok2 {
 		if major != int(C.zmq4_major) || minor != int(C.zmq4_minor) || patch != int(C.zmq4_patch) {
